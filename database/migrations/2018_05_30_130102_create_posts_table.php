@@ -22,8 +22,8 @@ class CreatePostsTable extends Migration
                 $table->text('excerpt'); //summary of content
                 $table->longText('content'); // full content
                 $table->enum('status', ['published', 'draft', 'deleted']); // post statuses in admin
-                $table->integer('comment_count')->unsigned();
-                $table->dateTime('published_at');
+                $table->integer('comment_count')->unsigned(); // displays comment count per post
+                $table->dateTime('published_at'); //date published _at
                 $table->timestamps();
                 $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             }
