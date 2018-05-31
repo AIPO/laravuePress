@@ -1,20 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import AppHome from '../components/AppHome'
 
-import PostIndex from './views/Index.vue'
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-    routes: [{
-            path: '/',
-            redirect: '/posts'
-        },
+    routes: [
         {
-          path: 'posts',
-          component: PostIndex
-        }
-
-
+            path: '/',
+            component: AppHome
+        },
     ]
 })
 export default router
