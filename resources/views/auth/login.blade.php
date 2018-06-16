@@ -1,102 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <template>
-        <section>
-            <b-field label="Name">
-                <b-input v-model="name"></b-input>
-            </b-field>
-
-            <b-field label="Email"
-                     type="is-danger"
-                     message="This email is invalid">
-                <b-input type="email"
-                         value="john@"
-                         maxlength="30">
-                </b-input>
-            </b-field>
-
-            <b-field label="Username"
-                     type="is-success"
-                     message="This username is available">
-                <b-input value="johnsilver" maxlength="30"></b-input>
-            </b-field>
-
-            <b-field label="Password">
-                <b-input type="password"
-                         value="iwantmytreasure"
-                         password-reveal>
-                </b-input>
-            </b-field>
-
-            <b-field label="Message">
-                <b-input maxlength="200" type="textarea"></b-input>
-            </b-field>
-        </section>
-    </template>
-    {{--<div class="row justify-content-center">--}}
-        {{--<div class="col-md-8">--}}
-            {{--<div class="card">--}}
-                {{--<div class="card-header">{{ __('Login') }}</div>--}}
-
-                {{--<div class="card-body">--}}
-                    {{--<form method="POST" action="{{ route('login') }}">--}}
-                        {{--@csrf--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>--}}
-
-                                {{--@if ($errors->has('email'))--}}
-                                    {{--<span class="invalid-feedback">--}}
-                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>--}}
-
-                                {{--@if ($errors->has('password'))--}}
-                                    {{--<span class="invalid-feedback">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<div class="col-md-6 offset-md-4">--}}
-                                {{--<div class="checkbox">--}}
-                                    {{--<label>--}}
-                                        {{--<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}--}}
-                                    {{--</label>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row mb-0">--}}
-                            {{--<div class="col-md-8 offset-md-4">--}}
-                                {{--<button type="submit" class="btn btn-primary">--}}
-                                    {{--{{ __('Login') }}--}}
-                                {{--</button>--}}
-
-                                {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
-                                    {{--{{ __('Forgot Your Password?') }}--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-third is-offset-one-third">
+                <div class="card">
+                    <div class="card-header-title">
+                        <h1 class="title">@lang('cms.login')</h1>
+                    </div>
+                    <div class="card-content">
+                        <div class="field">
+                            <div class="field-label">
+                                <label for="email" class="label">@lang('cms.email')</label>
+                            </div>
+                            <div class="control has-icons-left has-icons-right">
+                                <input type="text" class="input is-primary" name="email" id="email"
+                                       placeholder="name@pastas.com">
+                                <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                        <div class="field">
+                            <div class="field-label">
+                                <label for="password" class="label">@lang('cms.password')</label>
+                            </div>
+                            <div class="control has-icons-left">
+                                <input type="password" class="input is-primary" name="password" id="password">
+                                <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
+                            </div>
+                            <p class="help is-danger">
+                                This field is required
+                            </p>
+                        </div>
+                        <b-checkbox name="remember">@lang('cms.remember')</b-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

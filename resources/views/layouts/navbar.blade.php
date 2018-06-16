@@ -1,7 +1,7 @@
 <nav class="navbar">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{route('home')}}">
-                <img src="{{asset('')}}" alt="Lietuvos Žvyneline Sergančiųjų Draugija" width="112" height="28">
+                <img src="{{asset('')}}" alt="{{}}" width="112" height="28">
             </a>
         </div>
         <div class="navbar-menu">
@@ -10,50 +10,34 @@
                 <a href="" class="navbar-item is-tab is-hidden-mobile">Discuss</a>
                 <a href="" class="navbar-item is-tab is-hidden-mobile">Share</a>
                 <a href="" class="navbar-item is-tab is-hidden-mobile"></a>
-
+            </div>
                 <div class="navbar-end">
-                    @if(Auth::guest())
+                    @if(!Auth::guest())
                         <a href="" class="navbar-item is-tab">Login</a>
                         <a href="" class="navbar-item is-tab">Register</a>
                         @else
-                        <b-dropdown position="is-bottom-left">
+                        <b-dropdown v-model="navigation" position="is-bottom-left">
                             <a class="navbar-item" slot="trigger">
-                                <span>Login</span>
+                                <span>Menu</span>
                                 <b-icon icon="menu-down"></b-icon>
                             </a>
 
-                            <b-dropdown-item custom paddingless>
-                                <form action="">
-                                    <div class="modal-card" style="width:300px;">
-                                        <section class="modal-card-body">
-                                            <b-field label="Email">
-                                                <b-input
-                                                        type="email"
-                                                        placeholder="Your email"
-                                                        required>
-                                                </b-input>
-                                            </b-field>
-
-                                            <b-field label="Password">
-                                                <b-input
-                                                        type="password"
-                                                        password-reveal
-                                                        placeholder="Your password"
-                                                        required>
-                                                </b-input>
-                                            </b-field>
-
-                                            <b-checkbox>Remember me</b-checkbox>
-                                        </section>
-                                        <footer class="modal-card-foot">
-                                            <button class="button is-primary">Login</button>
-                                        </footer>
-                                    </div>
-                                </form>
+                            <b-dropdown-item custom>
+                                Logged as <b>Rafael Beraldo</b>
                             </b-dropdown-item>
-                        </b-dropdown>
+                            <hr class="dropdown-divider">
+                            <b-dropdown-item has-link>
+                                <a href="https://google.com" target="_blank">
+                                    <b-icon icon="link"></b-icon>
+                                    Google (link)
+                                </a>
+                            </b-dropdown-item>
+                            <b-dropdown-item value="home">
+                                <b-icon icon="home"></b-icon>
+                                Home
+                            </b-dropdown-item>
                     @endif
                 </div>
             </div>
-        </div>
+
 </nav>
