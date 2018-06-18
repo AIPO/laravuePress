@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/{locale?}', function ($locale=null) {
-    App::setLocale($locale);
-    return view('welcome');
-})->name('home');
+/*//Route::get(
+//    '/',
+//    function ($locale = null) {
+//        App::setLocale($locale);
+//
+//        return view('welcome');
+//    }
+)->name('home');*/
+Auth::routes();
 
+Auth::routes();
 
-
+Route::get('/home', 'HomeController@index')->name('home');

@@ -20,8 +20,9 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app" class="container is-fullhd">
-    @include('layouts.navbar')
+<div id="app">
+@include('layouts.navbar')
+
     @yield('content')
 
 </div>
