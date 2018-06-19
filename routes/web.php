@@ -10,6 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Locale Switch routes
+Route::get(
+    'locale',
+    function () {
+        return \App::getLocale();
+    }
+);
+Route::get(
+    'locale/{locale}',
+    function ($locale) {
+        \Session::put('locale', $locale);
+
+        return redirect()->back();
+    }
+);
 
 /*//Route::get(
 //    '/',
@@ -21,6 +36,5 @@
 )->name('home');*/
 Auth::routes();
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
