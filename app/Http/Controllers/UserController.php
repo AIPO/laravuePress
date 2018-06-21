@@ -14,8 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-         $users= User::findAll();
-        return 0;
+        $users = User::findAll();
+
+        return view('users', ['users' => $users]);
     }
 
     /**
@@ -65,7 +66,7 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)

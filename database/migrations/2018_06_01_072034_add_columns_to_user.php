@@ -13,10 +13,13 @@ class AddColumnsToUser extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table){
-           $table->string('api_token');
-           $table->enum('role', ['admin', 'moderator', 'user', 'guest']);
-        });
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                $table->string('api_token');
+                $table->enum('role', ['admin', 'moderator', 'user', 'guest']);
+            }
+        );
     }
 
     /**
@@ -26,10 +29,13 @@ class AddColumnsToUser extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('api_token');
-            $table->dropColumn('role');
-        });
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                $table->dropColumn('api_token');
+                $table->dropColumn('role');
+            }
+        );
 
     }
 }

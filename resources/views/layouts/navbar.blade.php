@@ -14,36 +14,37 @@
                 </div>
             </div>
 
-                <a href="" class="navbar-item is-tab is-hidden-mobile">Learn</a>
-                <a href="" class="navbar-item is-tab is-hidden-mobile">Discuss</a>
-                <a href="" class="navbar-item is-tab is-hidden-mobile">Share</a>
-            <div class="navbar-end">
-                @if(!Auth::guest())
-                    <a href="" class="navbar-item is-tab">Login</a>
-                    <a href="" class="navbar-item is-tab">Register</a>
-                @else
-                    <b-dropdown v-model="navigation" position="is-bottom-left" hoverable>
-                        <a class="navbar-item" slot="trigger">
-                            <span>Menu</span>
-                            <b-icon icon="menu-down"></b-icon>
-                        </a>
-
-                        <b-dropdown-item>
-                            Logged as <b>User</b>
-                        </b-dropdown-item>
-                        <hr class="dropdown-divider">
-                        <b-dropdown-item has-link>
-                            <a href="https://google.com" target="_blank">
-                                <b-icon icon="link"></b-icon>
-                                Google (link)
-                            </a>
-                        </b-dropdown-item>
-                        <b-dropdown-item value="home">
-                            <b-icon icon="home"></b-icon>
-                            Home
-                        </b-dropdown-item>
-                @endif
-            </div>
+            <a href="" class="navbar-item is-tab is-hidden-mobile">Learn</a>
+            <a href="" class="navbar-item is-tab is-hidden-mobile">Discuss</a>
+            <a href="" class="navbar-item is-tab is-hidden-mobile">Share</a>
         </div>
+        <div class="navbar-end">
+            @if(Auth::guest())
+                <a href="{{route('login')}}" class="navbar-item">Login</a>
+                <a href="{{route('register')}}" class="navbar-item">Register</a>
+            @else
+                <b-dropdown position="is-bottom-left" hoverable>
+                    <a class="navbar-item" slot="trigger">
+                        <span>Menu</span>
+                        <b-icon icon="menu-down"></b-icon>
+                    </a>
 
+                    <b-dropdown-item>
+                        Logged as <b>User</b>
+                    </b-dropdown-item>
+                    <hr class="dropdown-divider">
+                    <b-dropdown-item has-link>
+                        <a href="https://google.com" target="_blank">
+                            <b-icon icon="link"></b-icon>
+                            Google (link)
+                        </a>
+                    </b-dropdown-item>
+                    <b-dropdown-item value="home">
+                        <b-icon icon="home"></b-icon>
+                        Home
+                    </b-dropdown-item>
+                </b-dropdown>
+            @endif
+        </div>
+    </div>
 </nav>
