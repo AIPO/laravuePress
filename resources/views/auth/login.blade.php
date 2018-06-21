@@ -36,6 +36,7 @@
                         </button>
                     </form>
                 </div>
+
             </div>
             <h5 class="has-text-centered m-t-30">
                 <a href="{{route('password.request')}}" class="is-muted ">@lang('cms.forgotPassword')</a>

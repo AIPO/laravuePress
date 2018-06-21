@@ -10,6 +10,36 @@
                 <div class="card-content">
                     <form action="{{route('register')}}" method="post" role="form">
                         {{csrf_field()}}
+                                <b-field label="@lang('cms.email')">
+                                    <b-input type="email"
+                                             icon="email"
+                                             name="email"
+                                             id="email"
+                                             v-model="email"
+                                             placeholder="@lang('cms.email')"
+                                             v-validate="'required|email'"
+                                             value="{{old('email')}}">
+                                    </b-input>
+                                </b-field>
+                            <b-field label="@lang('cms.password')">
+                                <b-input type="password"
+                                         name="password"
+                                         id="password"
+                                         icon="lock"
+                                         min="6"
+                                         password-reveal>
+                                </b-input>
+                            </b-field>
+                        <b-checkbox name="remember">@lang('cms.remember')</b-checkbox>
+                        <button class="button is-primary is-fullwidth m-t-30">
+                            @lang('cms.login')
+                        </button>
+                <div class="card-header-title is-centered">
+                    <h1 class="title"> @lang('cms.register')</h1>
+                </div>
+                <div class="card-content">
+                    <form action="{{route('register')}}" method="post" role="form">
+                        {{csrf_field()}}
                         <b-field label="@lang('cms.name')">
                             <b-input type="name"
                                      icon-pack="fa"
@@ -57,11 +87,9 @@
                                 @lang('cms.button.register')
                             </button>
                     </form>
-                    <h5 class="has-text-centered m-t-30">
-                        <a href="{{route('login')}}" class="is-muted">@lang('cms.login')</a>
-                    </h5>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

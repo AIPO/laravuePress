@@ -27,7 +27,6 @@ class CreatePostsTable extends Migration
                 $table->dateTime('published_at'); //date published _at
                 $table->timestamps();
                 $table->softDeletes();
-                $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             }
         );
     }
