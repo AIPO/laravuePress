@@ -10,36 +10,6 @@
                 <div class="card-content">
                     <form action="{{route('register')}}" method="post" role="form">
                         {{csrf_field()}}
-                                <b-field label="@lang('cms.email')">
-                                    <b-input type="email"
-                                             icon="email"
-                                             name="email"
-                                             id="email"
-                                             v-model="email"
-                                             placeholder="@lang('cms.email')"
-                                             v-validate="'required|email'"
-                                             value="{{old('email')}}">
-                                    </b-input>
-                                </b-field>
-                            <b-field label="@lang('cms.password')">
-                                <b-input type="password"
-                                         name="password"
-                                         id="password"
-                                         icon="lock"
-                                         min="6"
-                                         password-reveal>
-                                </b-input>
-                            </b-field>
-                        <b-checkbox name="remember">@lang('cms.remember')</b-checkbox>
-                        <button class="button is-primary is-fullwidth m-t-30">
-                            @lang('cms.login')
-                        </button>
-                <div class="card-header-title is-centered">
-                    <h1 class="title"> @lang('cms.register')</h1>
-                </div>
-                <div class="card-content">
-                    <form action="{{route('register')}}" method="post" role="form">
-                        {{csrf_field()}}
                         <b-field label="@lang('cms.name')">
                             <b-input type="name"
                                      icon-pack="fa"
@@ -49,7 +19,7 @@
                                      placeholder="@lang('cms.name')"
                                      value="{{old('name')}}"
                                      message="Name is invalid."
-                            required>
+                                     required>
                             </b-input>
                         </b-field>
                         <b-field label="@lang('cms.email')">
@@ -83,13 +53,12 @@
                                      password-reveal>
                             </b-input>
                         </b-field>
-                            <button class="button is-primary is-fullwidth m-t-30">
-                                @lang('cms.button.register')
-                            </button>
+                        <button class="button is-primary is-fullwidth m-t-30">
+                            @lang('cms.button.register')
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
