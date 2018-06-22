@@ -5,7 +5,6 @@ namespace App\Models;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laratrust\Traits\LaratrustUserTrait;
 
 /**
  * App\Models\User
@@ -31,7 +30,6 @@ use Laratrust\Traits\LaratrustUserTrait;
  */
 class User extends Authenticatable
 {
-    use LaratrustUserTrait;
     use HasApiTokens, Notifiable;
 
     /**
