@@ -44,3 +44,9 @@ Route::get(
         return view('welcome');
     }
 );
+Route::prefix('admin')->middleware('role:superadminstrator')->group(
+    function () {
+        Route::get('/'.'ManageController@index');
+        Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
+    }
+);

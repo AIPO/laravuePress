@@ -18,11 +18,9 @@ class CreateUsersTable extends Migration
             function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('name');
-                $table->unsignedInteger('reputation');
                 $table->string('email')->unique();
                 $table->string('password');
                 $table->rememberToken();
-                $table->enum('role', ['admin', 'user']);
                 $table->timestamps();
             }
         );
